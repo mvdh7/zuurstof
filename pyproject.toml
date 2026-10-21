@@ -1,10 +1,13 @@
 [project]
-name = "template-python-uv"
+name = "zuurstof"
 version = "0.1.0"
-description = "Add your description here"
+description = "Dissolved oxygen data processing in Python"
 readme = "README.md"
-requires-python = ">=3.15"
-dependencies = []
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=1",
+    "pandas>=3,<4",
+]
 
 [tool.ruff]
 line-length = 79
@@ -24,3 +27,8 @@ norecursedirs = [
 ]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+]
