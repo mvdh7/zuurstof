@@ -1,6 +1,8 @@
 [project]
 name = "zuurstof"
-version = "0.1.0"
+authors = [
+    { name = "Matthew P. Humphreys", email = "mvdh7@users.noreply.github.com" }
+]
 description = "Dissolved oxygen data processing in Python"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -8,6 +10,7 @@ dependencies = [
     "numpy>=1",
     "pandas>=3,<4",
 ]
+dynamic = ["version"]
 
 [tool.ruff]
 line-length = 79
@@ -32,3 +35,10 @@ python_files = ["test_*.py"]
 dev = [
     "ipykernel>=7.4.0",
 ]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "zuurstof/__init__.py"
